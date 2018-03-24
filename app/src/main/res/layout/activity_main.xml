@@ -1,18 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+* Project "Save Me"
+* Created by Dragos Atanasoae
+* Email: dragos.atanasoae@gmail.com
+* University "1 Decembrie 1918" Alba-Iulia
+* MIT License
+* Copyright (c) 2018 Dragos Atanasoae
+-->
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_splash"
     tools:context="com.atanasoae.dragos.saveme.MainActivity">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/sos_card_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        ads:layout_constraintBottom_toTopOf="@+id/send_sms_card_layout"
+        ads:layout_constraintEnd_toStartOf="@+id/where_i_am_card_layout"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintHorizontal_chainStyle="spread"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnFlashlightSOS"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorButton"
+            android:foreground="@drawable/ic_sos"
+            android:hapticFeedbackEnabled="false"
+            android:soundEffectsEnabled="false"
+            android:contentDescription="@string/sos_flash_button" />
+
+        <TextView
+            android:id="@+id/textFlashlightSOS"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/colorButtonTag"
+            android:text="@string/flashlight"
+            android:textAlignment="center"
+            android:textColor="#ffff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/where_i_am_card_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        ads:layout_constraintBottom_toTopOf="@+id/emergency_card_layout"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintStart_toEndOf="@+id/sos_card_layout"
+        ads:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnWhereIAm"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorButton"
+            android:foreground="@drawable/ic_my_location2"
+            android:contentDescription="@string/where_i_am_button" />
+
+        <TextView
+            android:id="@+id/textMyLocation"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorButtonTag"
+            android:text="@string/where_i_am"
+            android:textAlignment="center"
+            android:textColor="#ffff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/send_sms_card_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        ads:layout_constraintBottom_toTopOf="@+id/family_card_layout"
+        ads:layout_constraintEnd_toStartOf="@+id/emergency_card_layout"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintHorizontal_chainStyle="spread"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/sos_card_layout">
+
+        <ImageButton
+            android:id="@+id/btnSendMyLocation"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorButton"
+            android:foreground="@drawable/ic_sms"
+            android:contentDescription="@string/send_my_location_button" />
+
+        <TextView
+            android:id="@+id/textSendMyLocation"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/colorButtonTag"
+            android:text="@string/send_my_location"
+            android:textAlignment="center"
+            android:textColor="#ffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emergency_card_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="4dp"
+        android:orientation="vertical"
+        ads:layout_constraintBottom_toTopOf="@+id/settings_card_layout"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintStart_toEndOf="@+id/send_sms_card_layout"
+        ads:layout_constraintTop_toBottomOf="@+id/where_i_am_card_layout">
+
+        <ImageButton
+            android:id="@+id/btnEmergencyCall"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorButton"
+            android:foreground="@drawable/ic_emergency_call"
+            android:soundEffectsEnabled="true"
+            android:contentDescription="@string/emergency_call" />
+
+        <TextView
+            android:id="@+id/textEmergencyCall"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorButtonTag"
+            android:text="@string/emergency_call"
+            android:textAlignment="center"
+            android:textColor="#ffff" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/family_card_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        ads:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        ads:layout_constraintEnd_toStartOf="@+id/settings_card_layout"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintHorizontal_chainStyle="spread"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/send_sms_card_layout">
+
+        <ImageButton
+            android:id="@+id/btnCallFamily"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorButton"
+            android:foreground="@drawable/ic_family"
+            android:contentDescription="@string/call_family" />
+
+        <TextView
+            android:id="@+id/textNumber"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/btnCallFamily"
+            android:layout_alignStart="@+id/btnCallFamily"
+            android:layout_alignEnd="@+id/btnCallFamily"
+            android:layout_alignTop="@+id/btnCallFamily"
+            android:layout_margin="1dp"
+            android:background="@color/colorButtonTag"
+            android:gravity="center"
+            android:text="@string/no_phone"
+            android:textAlignment="center"
+            android:textColor="#fc0000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textCallFamily"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/btnCallFamily"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/colorButtonTag"
+            android:text="@string/call_family"
+            android:textAlignment="center"
+            android:textColor="#ffff" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/settings_card_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="4dp"
+        android:orientation="vertical"
+        ads:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintStart_toEndOf="@+id/family_card_layout"
+        ads:layout_constraintTop_toBottomOf="@+id/emergency_card_layout">
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorButton"
+            android:foreground="@drawable/ic_settings" />
+
+        <TextView
+            android:id="@+id/textSettings"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorButtonTag"
+            android:text="@string/settings"
+            android:textAlignment="center"
+            android:textColor="#ffff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        ads:layout_constraintBottom_toTopOf="@+id/adView"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+    </LinearLayout>
+
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-9034611610433224/2025377209"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintStart_toStartOf="parent" />
+
+
+
 
 </android.support.constraint.ConstraintLayout>

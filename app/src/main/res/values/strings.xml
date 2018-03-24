@@ -1,3 +1,107 @@
 <resources>
+    <string name="save_me">Save Me</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+    <string name="family_emergency_phone_number">phone number</string>
+    <string name="services_emergency_call">112</string>
+
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_maps">Where I am</string>
+    <string name="get_location">Get location</string>
+    <string name="no_data">no data</string>
+    <string name="send_your_location_details">Send your location details with SMS SaveMe!</string>
+    <string name="copyright_c_2018">Dragos Atanasoae Copyright © 2018</string>
     <string name="app_name">Save Me</string>
+    <string name="flashlight">Flashlight</string>
+    <string name="where_i_am">Where i am?</string>
+    <string name="send_my_location">Send my Location</string>
+    <string name="send_my_location_button">Send my location button</string>
+    <string name="where_i_am_button">Where i am button</string>
+    <string name="sos_flash_button">SOS flash button</string>
+    <string name="emergency_call">Emergency Call</string>
+    <string name="call_family">Call family</string>
+    <string name="no_phone">no phone</string>
+    <string name="settings">Settings</string>
+    <string name="family_emergency_phone">Family emergency phone</string>
+    <string name="add_phone">Add phone</string>
+    <string name="delete_phone">delete phone</string>
+    <string name="enable_disable_gps">Enable/Disable GPS</string>
+    <string name="on_off_gps">on/off GPS</string>
+    <string name="emergency_call_services">Emergency call services</string>
+    <string name="info_112">112 - available for Romania only (beta version)</string>
+    <string name="enable_disable_flashlight_shake">Enable/Disable flashlight shake</string>
+    <string name="available_soon_beta_version">available soon (beta version)</string>
+    <string name="save_settings">Save settings</string>
+    <string name="image">image</string>
+    <string name="icon_sms_sos">icon sms SOS</string>
 </resources>
